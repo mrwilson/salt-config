@@ -20,7 +20,6 @@ vim-packages:
   pkg.installed:
     - names:
       - vim
-      - pathogen
 
 {{ dotfile('.vimrc', 'dotfiles/vimrc', 'vim') }}
 
