@@ -1,0 +1,3 @@
+include:
+  - version-control
+  - shell
