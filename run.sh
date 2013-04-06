@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ##########################################################
-##	Bootstrap script for system provisioning	##
+##  Bootstrap script for system provisioning	##
 ##	Alex Wilson <a.wilson@alumni.warwick.ac.uk>	##
 ##########################################################
 
@@ -16,14 +16,14 @@ wget -O - http://bootstrap.saltstack.org | sh
 
 echo "Downloading salt-config from GitHub"
 mkdir $SALT_CONFIG_DIR
-wget -qO- $SALT_CONFIG_URL | tar zxvf - -C $SALT_CONFIG_DIR
+wget -qO- $SALT_CONFIG_URL | tar zxvf - -C $SALT_CONFIG_DIR --strip 1
 
 echo "Downloading dotfiles"
 mkdir $DOTFILES_DIR
-wget -qO- $DOTFILES_URL | tar zxvf - -C $DOTFILES_DIR
+wget -qO- $DOTFILES_URL | tar zxvf - -C $DOTFILES_DIR --strip 1
 
 echo "Copying salt-minion config"
-cp $SALT_CONFIG_DIR/salt-minion.cfg /etc/salt/minion.d/
+cp $SALT_CONFIG_DIR/salt-minion.cfg /etc/salt/minion
 
 echo "Starting salt build"
 salt-call state.highstate
