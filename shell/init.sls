@@ -1,4 +1,4 @@
-{% from 'macros.sls' import dotfile %}
+{% from 'macros.sls' import dotfile, download %}
 
 zsh:
   pkg:
@@ -23,3 +23,4 @@ vim-packages:
       - vim
 
 {{ dotfile('.vimrc', 'dotfiles/vimrc', 'vim') }}
+{{ download('https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim', '/home/mrwilson/.vim/colors') }} 
