@@ -4,5 +4,5 @@ base:
     - awesome
     - java
     - python
-    - utils.shell
-    - utils.version-control
+    - shell
+    - version-control

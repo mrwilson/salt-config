@@ -5,6 +5,7 @@ zsh:
     - installed
 
 {{ dotfile('.zshrc', 'dotfiles/zshrc', 'zsh') }}
+{{ dotfile('.Xdefaults', 'dotfiles/Xdefaults', 'zsh') }}
 
 /home/mrwilson/.zshrc.d:
   file.recurse:
@@ -22,4 +23,3 @@ vim-packages:
       - vim
 
 {{ dotfile('.vimrc', 'dotfiles/vimrc', 'vim') }}
-
