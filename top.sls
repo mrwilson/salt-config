@@ -6,3 +6,4 @@ base:
     - python
     - shell
     - version-control
+    - mysql
