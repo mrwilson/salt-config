@@ -16,8 +16,8 @@
   Downloading {{ url }}:
     cmd.run:
     {% if target_name %}
-      - name: wget {{ url }} -O {{ target_dir }}/{{ target_name }}
+      - name: wget {{ url }} -N -O {{ target_dir }}/{{ target_name }}
     {% else %}
-      - name: wget {{ url }} -P {{ target_dir }}
+      - name: wget {{ url }} -N -P {{ target_dir }}
     {% endif %}
 {%- endmacro %}
