@@ -7,3 +7,4 @@ base:
     - shell
     - version-control
     - mysql
+    - browsers.chrome
