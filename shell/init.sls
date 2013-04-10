@@ -16,11 +16,9 @@ zsh:
     - makedirs: True
     - require:
       - pkg: zsh
-
-vim-packages:
-  pkg.installed:
-    - names:
-      - vim
+vim:
+  pkg:
+    - installed
 
 {{ dotfile('.vimrc', 'dotfiles/vimrc', 'vim') }}
 {{ download('https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim', '/home/mrwilson/.vim/colors') }} 

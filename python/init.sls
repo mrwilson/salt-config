@@ -1,9 +1,7 @@
 python-packages:
   pkg.installed:
-    - names:
+    - pkgs:
       - python2.7
       - python-virtualenv
       - ipython
       - ipython-notebook
-
-
