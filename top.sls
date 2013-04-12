@@ -6,5 +6,6 @@ base:
     - python
     - shell
     - version-control
-    - mysql
+    - db.mysql
+    - db.postgres
     - browsers.chrome
