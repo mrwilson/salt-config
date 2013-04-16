@@ -2,6 +2,7 @@ base:
   '*':
     - users
     - awesome
+    - awesome.flux
     - java
     - python
     - shell
