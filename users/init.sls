@@ -5,5 +5,3 @@ mrwilson:
     - home: /home/mrwilson
     - uid: 1000
     - gid: 1000
-    - groups:
-      - admin

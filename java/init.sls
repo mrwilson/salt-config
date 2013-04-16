@@ -3,6 +3,5 @@ java-packages:
     - names:
       - openjdk-7-jdk
       - openjdk-7-jre
-      - eclipse
 
  

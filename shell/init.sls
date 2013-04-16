@@ -1,11 +1,12 @@
 {% from 'macros.sls' import dotfile, download %}
 
-zsh:
-  pkg:
-    - installed
-
-{{ dotfile('.zshrc', 'dotfiles/zshrc', 'zsh') }}
-{{ dotfile('.Xdefaults', 'dotfiles/Xdefaults', 'zsh') }}
+shell-packages:
+  pkg.installed:
+    - names:
+      - zsh
+      - vim
+      - htop
+      - rxvt-unicode
 
 /home/mrwilson/.zshrc.d:
   file.recurse:
@@ -16,9 +17,8 @@ zsh:
     - makedirs: True
     - require:
       - pkg: zsh
-vim:
-  pkg:
-    - installed
 
+{{ dotfile('.zshrc', 'dotfiles/zshrc', 'zsh') }}
+{{ dotfile('.Xdefaults', 'dotfiles/Xdefaults', 'zsh') }}
 {{ dotfile('.vimrc', 'dotfiles/vimrc', 'vim') }}
 {{ download('https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim', '/home/mrwilson/.vim/colors') }} 
