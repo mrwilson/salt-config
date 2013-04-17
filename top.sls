@@ -2,7 +2,7 @@ base:
   '*':
     - users
     - awesome
-    - awesome.flux
+    - media.spotify
     - java
     - python
     - shell
