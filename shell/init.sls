@@ -7,6 +7,8 @@ shell-packages:
       - vim
       - htop
       - rxvt-unicode
+      - screen
+      - xlockmore
 
 /home/mrwilson/.zshrc.d:
   file.recurse:
