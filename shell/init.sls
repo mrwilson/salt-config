@@ -9,6 +9,8 @@ shell-packages:
       - rxvt-unicode
       - screen
       - xlockmore
+      - g++
+      - valgrind
 
 /home/mrwilson/.zshrc.d:
   file.recurse:
