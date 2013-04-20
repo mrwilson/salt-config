@@ -1,0 +1,2 @@
+workrave:
+    pkg.installed
