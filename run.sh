@@ -36,6 +36,15 @@ chown -R mrwilson:mrwilson $DOTFILES_DIR
 
 echo "Transforming config directories into git repos."
 git clone --bare $GITHUB/dotfiles.git $DOTFILES_DIR/.git
+cd $DOTFILES_DIR
+git config --bool core.bare false
+git add -A
+cd -
+
 git clone --bare $GITHUB/salt-config.git $SALT_CONFIG_DIR/.git
+cd $SALT_CONFIG_DIR
+git config --bool core.bare false
+git add -A
+cd -
 
 echo "Done."
