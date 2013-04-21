@@ -11,7 +11,7 @@ SALT_CONFIG_DIR=/srv/salt
 DOTFILES_URL=https://api.github.com/repos/mrwilson/dotfiles/tarball
 DOTFILES_DIR=/srv/salt-files
 
-GITHUB=git@github.com:mrwilson
+GITHUB=https://github.com/mrwilson/
 
 echo "Downloading minimal salt-minion"
 wget -O - http://bootstrap.saltstack.org | sh
