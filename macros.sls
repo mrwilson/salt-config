@@ -1,11 +1,12 @@
-{% macro dotfile(new_location, salt_location, requirement=None) -%}
-  /home/mrwilson/{{ new_location }}:
-    file.managed:
-      - source: salt://{{ salt_location }}
+{% macro dotfile(location, salt_location, requirement=None) -%}
+  /home/mrwilson/{{ location }}:
+    file.symlink:
+      - target: /srv/salt-files/{{ salt_location }}
+      - force: True
+      - makedirs: True
       - user: mrwilson
       - group: mrwilson
       - mode: 644
-      - makedirs: True
   {% if requirement %}
       - require:
         - pkg: {{ requirement }}
