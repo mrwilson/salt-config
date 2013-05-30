@@ -6,7 +6,10 @@
 #####################################################
 
 SALT_CONFIG_URL=https://api.github.com/repos/mrwilson/salt-config/tarball
-SALT_CONFIG_DIR=/srv/salt
+SALT_CONFIG_DIR=/srv/setup
+
+SALT_ROOT=/srv/salt
+SALT_PILLAR=/srv/pillar
 
 DOTFILES_URL=https://api.github.com/repos/mrwilson/dotfiles/tarball
 DOTFILES_DIR=/srv/salt-files
@@ -26,6 +29,10 @@ wget -qO- $DOTFILES_URL | tar zxvf - -C $DOTFILES_DIR --strip 1
 
 echo "Copying salt-minion config"
 cp $SALT_CONFIG_DIR/salt-minion.cfg /etc/salt/minion
+
+echo "Linking roots"
+ln -v -s $SALT_CONFIG_DIR/salt $SALT_ROOT
+ln -v -s $SALT_CONFIG_DIR/pillar $SALT_PILLAR
 
 echo "Starting salt build"
 salt-call state.highstate

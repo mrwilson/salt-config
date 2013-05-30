@@ -16,9 +16,6 @@
 {% macro download(url, target_dir, target_name=None) -%}
   Downloading {{ url }}:
     cmd.run:
-    {% if target_name %}
       - name: wget {{ url }} -N -O {{ target_dir }}/{{ target_name }}
-    {% else %}
-      - name: wget {{ url }} -N -P {{ target_dir }}
-    {% endif %}
+      - unless: test -f {{ target_dir }}/{{ target_name }}
 {%- endmacro %}
