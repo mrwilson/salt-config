@@ -11,3 +11,4 @@ base:
     - db.mysql
     - db.postgres
     - browsers.chrome
+    - latex
